@@ -1,0 +1,60 @@
+<div class="__panier-main">
+    <div class="__panier-container">
+        <h1>Mon Panier</h1>
+        <div class="__facture-list" *ngIf="panier.length >0">
+            
+            <div class="__produit-unique"
+            *ngFor="let produit of panier; let indexFR = index"
+            >
+                <div class="__produit-unique-block-1">
+                    <h3>{{produit.titre}}</h3>
+                    <mat-chip-list>
+                        <mat-chip class="chip">En stock</mat-chip>
+                    </mat-chip-list>
+                    
+                    <p class="quant">Quantité : {{produit.quantite}}</p>
+                    
+                </div>
+                <div class="__produit-unique-block-2">
+                    <p class="__prix-affiche">{{produit.prix*produit.quantite |currency:'EUR':'symbol':'1.0':'fr'}}</p>
+                    <!-- |currency:'EUR':'symbol':'1.2-2':'fr' -> 1 entier 2 decimales -->
+                    <button mat-icon-button color="warn"
+                    (click)="onSupprimer(indexFR)"><mat-icon>delete</mat-icon></button>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="__total" *ngIf="panier.length >0">
+            <div class="__total-block">
+
+                <p class="gris" *ngIf="panier.length >1">{{panier.length}} articles </p>
+                <p class="gris" *ngIf="panier.length ===1">{{panier.length}} article</p>
+                <p class="gris" >livraison</p>
+                <p class="__prix-total" >Total(ttc)</p>
+
+            </div>
+            <div class="__total-block">
+                
+                <p class="__prix-sous-total">{{calculTotal()|currency:'EUR':'symbol':'1.0':'fr'}}</p>
+                <p>Gratuite</p>
+                <p class="__prix-total">{{calculTotal()|currency:'EUR':'symbol':'1.0':'fr'}}</p>
+                
+            </div>
+        </div>
+        
+    </div>
+    <button mat-flat-button
+    color="warn"
+    class="bouton-commande"
+    (click)="test()"
+    routerLink='/auth'
+    *ngIf="panier.length >0"
+    >Passer commande</button>
+    <div class="__panier-vide" *ngIf="panier.length===0">
+        <h3>Vous n'avez actuellement aucun article dans votre panier</h3>
+    </div>
+    <!-- <button mat-flat-button
+    color="accent"
+    (click)="test()">test</button> -->
+</div>

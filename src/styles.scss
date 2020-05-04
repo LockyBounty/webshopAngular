@@ -1,1 +1,32 @@
+@font-face {
+    font-family: Raleway;
+    src: url(assets/fonts/Raleway-SemiBold.ttf) format("truetype");
+}
+@font-face {
+    font-family: Source;
+    src: url(assets/fonts/SourceSansPro-Regular.ttf) format("truetype");
+}
 /* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    scroll-behavior: smooth;  }
+
+
+body { 
+    margin: 0; 
+    height:100%;
+    // position: relative;
+    // padding-bottom : 291px; //taille group-footer
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+h1 {
+    margin: 0;
+    font-family: 'Raleway';
+}

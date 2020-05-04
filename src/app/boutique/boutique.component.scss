@@ -1,0 +1,85 @@
+@font-face {
+    font-family: Source;
+    src: url(../../assets/fonts/SourceSansPro-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: Raleway-med;
+    src: url(../../assets/fonts/Raleway-Medium.ttf) format("truetype");
+}
+h1 {
+    font-weight: 500;
+    font-family: Source;
+    font-size: 37px;
+    color: #027368;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 3em 5vw 2em 5vw;
+    background-color: #f8f9fa;
+}
+
+
+/* On screens that are 600px or less */
+@media screen and (max-width: 600px) {
+    .card-product {
+        
+        min-width: 123px;
+        max-width: 420px;
+    }
+}
+/* On screens that are 601px or more */
+@media screen and (min-width: 601px) {
+    .card-product {
+        
+        min-width: 150px;
+        max-width: 230px;
+    }
+}
+/* Retour au global */
+.product-display{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    img{
+        max-width: 100%;
+        height: auto;
+        
+    }
+    sup {
+        font-size: medium;
+        font-weight: 600;
+    }
+    .card-product {
+        margin:  2em 1em 2em 1em;
+        padding: 0 1em 2em 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;//centre milieu y
+        align-items: center; //centre milieu x
+        text-align: center;
+    }
+    
+}
+.__card-titre{
+    text-decoration: none;
+    color: #D91828;
+    font-size: 19px;
+}
+.__hover-pointer{
+    :hover{
+        cursor: pointer
+    }
+}
+.__card-prix{
+    font-family: Arial, Helvetica, sans-serif;
+    color : rgb(32, 32, 32);
+    font-weight: 600;
+    font-size: 33px;
+    margin : 0;
+}
+
+
+
+

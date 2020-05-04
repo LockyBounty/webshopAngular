@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Notre gamme de <strong>produits</strong> </h1>
+    <div class="product-display">
+        <mat-card 
+        class="card-product mat-elevation-z2"
+        *ngFor="let produit of produits; let i = index"
+        
+        >
+            <mat-card-content>
+            <a [routerLink]="['/produits',produit.id]">
+                <img src="{{produit.photo}}"></a>
+            </mat-card-content>
+            <mat-card-header
+            class="__hover-pointer">
+                <mat-card-title>
+                    <a 
+                    [routerLink]="['/produits',produit.id]"
+                    class="__card-titre">{{produit.titre}}</a></mat-card-title>
+                <mat-card-subtitle class="__card-prix">{{produit.prix.euro}}<sup>€{{produit.prix.centimes}}</sup></mat-card-subtitle>
+            </mat-card-header>
+            
+            
+        </mat-card>
+    </div>
+</div>
+
+<!-- 
+<button (click)="test()">lol
+
+</button> -->

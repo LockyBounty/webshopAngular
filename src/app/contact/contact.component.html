@@ -1,0 +1,93 @@
+<div class="__form-main">
+    
+    <div class="__form-container mat-elevation-z4">
+        <h1>Nous <strong>contacter</strong></h1>
+        <form 
+        [formGroup]="contactForm" 
+        (ngSubmit)="onSubmitForm()">
+            <div>
+                <mat-radio-group class="__centered form-group" name="titre" formControlName="titre">
+                    <mat-radio-button value="monsieur" class="__radio">M.</mat-radio-button>
+                    <mat-radio-button value="madame" >Mme.</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="__form-group form-group">
+                <mat-form-field class="__full-width">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput placeholder="Prénom" value="" name="prenom" formControlName="prenom">
+                    <mat-error *ngIf="contactForm.invalid && (contactForm.dirty || contactForm.touched)">
+                        Champ requis*
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="__form-group">
+                <mat-form-field class="__full-width">
+                    <mat-label>Nom</mat-label>
+                    <input matInput placeholder="Nom" name="nom"  value="" formControlName="nom">
+                    <mat-error *ngIf="contactForm.invalid && (contactForm.dirty || contactForm.touched)">
+                        Champ requis*
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="__form-group">
+                <mat-form-field class="__full-width">
+                    <mat-label>Pays</mat-label>
+                    <input matInput placeholder="Pays" name="pays" value="" formControlName="pays">
+                    <mat-error *ngIf="contactForm.invalid && (contactForm.dirty || contactForm.touched)">
+                        Champ requis*
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="__form-group">
+                <mat-form-field class="__full-width">
+                    <mat-label>Ville</mat-label>
+                    <input matInput placeholder="Ville" 
+                    value="" name="ville" 
+                    oninput="this.value.charAt(0).toUpperCase();"
+                    formControlName="ville">
+                    <mat-error *ngIf="contactForm.invalid && (contactForm.dirty || contactForm.touched)">
+                        Champ requis*
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="__form-group">
+                <mat-form-field class="__full-width">
+                    <mat-label>Adresse e-mail</mat-label>
+                    <input matInput 
+                    name="email" 
+                    placeholder="Ex : monemail@mail.com" 
+                    value=""
+                    formControlName="email"
+                    >
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Veuillez entrer une adresse mail valide
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="__form-group">
+                <p style="color: #027368;" >Concerne :</p>
+                <label for="titre"class="__padding-bottom"></label>
+                    <mat-select placeholder="Faites un choix..." name="sujet" formControlName="sujet" >
+                        <mat-option *ngFor="let titre of titres" [value]="titre.value">
+                            {{titre.value}}
+                        </mat-option>
+                    </mat-select>
+            </div>
+            <div class="__form-group">
+                <p style="color:#027368">Votre message</p>   
+                <textarea name="message"  cols="20" rows="10" formControlName="message"></textarea>
+                
+            </div>
+            <button mat-flat-button 
+            disabled
+            class="__bouton-denvoi"
+            *ngIf="contactForm.invalid">Soumettre</button>
+            <button mat-flat-button 
+            color="warn" 
+            type="submit" 
+            class="__bouton-denvoi"
+            *ngIf="!contactForm.invalid">Soumettre</button>
+        </form>
+    </div>
+    
+</div>

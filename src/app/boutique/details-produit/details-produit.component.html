@@ -1,0 +1,102 @@
+<div class="__details-main">
+    <div class="__details-container">
+
+        <div class="__details-block-1">
+            <img src={{produit.photo}} >
+        </div>
+        <div class="__details-block-2"
+        
+        >    
+            <h2 [innerHTML]="produit.titre"></h2>
+            <p [innerHTML]="produit.description"></p>
+
+            <div class="__details-block-commande">                    
+                <form 
+                (ngSubmit)="onAjouterDansPanier(produit.titre, produit.prix.total, quantity.value)"       
+                >
+                <!-- quantity.value en reference à l'input #quantity -->
+                    <mat-card class="__main-card">
+                        <div class="__quantity-box">
+                            <button 
+                            type ="button"
+                            mat-stroked-button
+                            color="warn"
+                            class="__bouton-moins"
+                            (click)="onMoins(quantity.value)"
+                            
+                            ><fa-icon [icon]="faMinus"></fa-icon></button>
+                            <input 
+                            type="number" 
+                            name="quantity" 
+                            id="quantity" 
+                            #quantity
+                            class="form-control form-control __input-quantity" 
+                            min="10"
+                            max="200"
+                            [value]="maQuantite"
+                            (input)="onPlus($event.target.value)"
+                            
+                            >
+                            <!-- [value] qu'on bind à une var dans le ts 
+                            (input)="onPlus($event.target.value)" = pour agir dans la case input meme
+                            type="button" pour eviter que cela declenche tous boutons -->
+                            <button 
+                            type ="button"
+                            mat-button
+                            mat-stroked-button
+                            color="warn"
+                            class="__bouton-plus"
+                            (click)="onPlus(quantity.value)"><fa-icon [icon]="faPlus"></fa-icon></button>
+                            
+                        </div>
+                        
+                        
+                        <div class="__prix-calcul">
+                            <div class="__prix-calcul-box">
+                                <mat-card-subtitle class="__top-titre">PRIX UNITAIRE</mat-card-subtitle>
+                                <mat-card-title class="__card-prix"
+                                >
+                                    {{produit.prix.euro}}<sup>€{{produit.prix.centimes}}</sup></mat-card-title>
+                            </div>
+                            <div class="__prix-calcul-box">
+                                <mat-card-subtitle class="__top-titre">PRIX TOTAL</mat-card-subtitle>
+                                <mat-card-title 
+                                class="__card-prix" 
+                                style="color: #D91828;">
+                                {{(produit.prix.total*quantity.value|currency:'EUR':'symbol':'1.0':'fr')}}</mat-card-title>
+                            </div>
+                        </div>
+                        <mat-card-content>
+                        <div class="__details-infobox">
+                            <div class="__redme">
+                                <fa-icon [icon]="faShippingFast"></fa-icon>&nbsp; Livraison gratuite &nbsp;
+                                <img src="../../../assets/images/delivery-logos.svg" height="25px" width="75px">
+                            </div>
+                            <div class="__sous-info">5 à 10 jours ouvrés selon les perturbations aériennes</div>
+                            
+                        </div>
+                        
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button
+                            type ="submit"
+                            class="__bouton-ajout"
+                            mat-flat-button 
+                            color="warn"
+                            >Ajouter au panier</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </form>
+
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<!-- <button mat-button
+color="warn"
+(click)="test()">text</button> -->

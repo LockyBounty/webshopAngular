@@ -1,0 +1,49 @@
+
+<mat-toolbar  
+color="primary" 
+class="mat-elevation-z4 __no-round">
+    
+    <span>LokiCorp</span>
+    <span class="__spacer"></span>
+
+    <div fxShow="true" fxHide.lt-sm="true">
+    <!-- fxHide.lt-sm cache le contenu a partir de small -->
+    <!-- npm install @angular/flex-layout –save pour fxHide -->
+
+    <a mat-button routerLink="">Accueil</a>
+    <a mat-button routerLink="produits">Boutique</a>
+    <a mat-button routerLink="contact">Contact</a>
+    <a mat-button routerLink="panier"><mat-icon>shopping_cart</mat-icon></a>
+    <a mat-button routerLink="auth"><mat-icon>account_circle</mat-icon></a>
+    </div>
+    <div fxShow="true" fxHide.gt-xs="true"
+        class="pointer">
+
+        <a routerlink="#" 
+        (click)="onToggleSidenav()"
+        >
+            <mat-icon>menu</mat-icon>
+        </a>
+    </div>
+
+</mat-toolbar>
+    
+<div
+*ngIf="isVisible"
+fxLayout="column"
+fxHide.gt-xs="true"
+class=" zero mat-elevation-z4">
+
+
+    <div class="__fond-violet" #sidenav fxLayout="column">
+        <div fxLayout="column">
+
+            <a mat-button routerLink="">Accueil</a>
+            <a mat-button routerLink="produits">Boutique</a>
+            <a mat-button routerLink="contact">Contact</a>
+            <a mat-button routerLink="panier">Panier</a>
+            <a mat-button routerLink="auth">Mon compte</a>
+
+        </div>
+    </div>
+    

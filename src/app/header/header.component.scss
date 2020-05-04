@@ -1,0 +1,48 @@
+.__spacer{
+    flex: 1 1 auto;
+}
+.wrap_it{
+    flex-wrap: wrap;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover, a:active{
+    color: lightgray;
+}
+
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+mat-toolbar{
+    border-radius: 3px;
+}
+
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+
+.__fond-violet{
+    background-color: #673AB7;
+}
+
+mat-sidenav-container {
+    flex-direction: row;
+}
+
+.pointer {
+    cursor : pointer;
+}
+
+.__no-round {
+    border-radius: 0;
+}

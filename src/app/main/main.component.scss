@@ -1,0 +1,234 @@
+@font-face {
+    font-family: Source;
+    src: url(../../assets/fonts/SourceSansPro-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: Raleway-med;
+    src: url(../../assets/fonts/Raleway-Medium.ttf) format("truetype");
+}
+
+h1 {
+    
+    margin: 0;
+    font-family: 'Raleway';
+    color: #fff;
+}
+img {
+    
+    padding: 0;
+    width: auto;
+    height:500px;
+}
+a {
+    color:#F44336;
+    text-decoration: none;
+}
+
+.__paraph-w {
+    color: #fff;
+}
+.__row-me {
+    display: flex;
+    // flex-direction: row;
+}
+.main-block{
+    background-color:  #673AB7;
+    padding: 0;
+    .__main-button{
+        margin-top:30px; 
+    }
+    .block1{
+        flex:1;
+        padding: 4em 3em 4em 3em;
+        margin: 0 1em 0 1em;
+    }
+    .block2{
+        flex:1;
+        display:flex;
+        flex-direction: row-reverse;
+        // row-reverse ici pour coller l'image au bord droit
+    }
+}
+.second-block{
+    position: relative;
+    // padding: 4em 3em 4em 3em;
+    font-family: 'Source';
+
+    .__red-me {
+        font-family: Raleway-med;
+        color: #F44336;
+        
+    }
+    .second-block-1{
+        margin: 0 3em 0 3em;
+        padding: 3em 1em 0em 1em;
+        
+
+    }
+    /* On screens that are 992px or less */
+    @media screen and (max-width: 992px) {
+        
+        .__card-prez {
+            
+            min-width: 170px;
+            width: 350px;
+        }
+    }
+    /* On screens that are 993px or more */
+    @media screen and (min-width: 993px) {
+        .__card-prez {
+            
+            min-width: 170px;
+            max-width: 190px;
+        }
+    }
+    /* Retour aux screens globaux */
+    .second-block-2{
+        padding: 1em 3em 2em 3em;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+            .group-prez{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .__card-prez {
+                flex:1;
+                // min-width: 170px;
+                // max-width: 190px;
+                margin: 0 0em 2em 0em;
+                padding: 1em 1em 2em 1em;
+                display: flex;
+                flex-direction: column;
+                // justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-family: Raleway-med;
+                h3{
+                    
+                    margin: 1em 0 1em 0;
+                    color : #F44336;
+                }
+                .icon-centered {
+                    margin:  0 0 2px 3px;
+                    
+                }
+                .__div-icon{
+                    margin: 1em 0 1em 0;
+                    height: 75px;
+                    width: 75px;
+                    background-color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    color :#F44336;
+                    .main-icon-prez {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 250%;
+                        font-weight: 600;
+                    }
+                }
+                p{
+                    padding: 0em 0 2.5em 0;
+                }
+                button {
+                    
+                    position: absolute;
+                    bottom: 20px;
+                    
+                    margin-top: 2em;
+                }
+            }
+            
+    }
+}
+
+.third-block {
+    position: relative;
+    background-color : bisque;
+    
+    padding: 2em 1em 2em 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    .third-block-1{
+        display: flex;
+        flex-direction: column;
+        margin: 0 5em 0 5em;
+        
+        .__red-me {
+            font-family: Raleway-med;
+            color: #F44336;
+            font-size: 25px;
+            
+        }
+    .third-block-2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+    
+
+    /* On screens that are 600px or less, set the background color to blue */
+    @media screen and (max-width: 600px) {
+        .card-product {
+            
+            min-width: 123px;
+            max-width: 420px;
+        }
+    }
+    /* On screens that are 601px or more, set the background color to blue */
+    @media screen and (min-width: 601px) {
+        .card-product {
+            
+            min-width: 150px;
+            max-width: 230px;
+        }
+    }
+    /* Retour au global */
+    .third-block-2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        sup {
+            font-size: medium;
+            font-weight: 600;
+        }
+        .card-product {
+            margin:  2em 1em 2em 1em;
+            padding: 0 1em 2em 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;//centre milieu y
+            align-items: center; //centre milieu x
+            text-align: center;
+        }
+        
+    }
+    .__card-titre{
+        
+        color: #F44336;
+        font-size: 19px;
+    }
+    .__card-prix{
+        font-family: Arial, Helvetica, sans-serif;
+        color : rgb(32, 32, 32);
+        font-weight: 600;
+        font-size: 33px;
+        margin : 0;
+    }
+}

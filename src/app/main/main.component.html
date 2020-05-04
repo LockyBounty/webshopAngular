@@ -1,0 +1,125 @@
+
+
+<div class="main-block __row-me" >
+    <div class="block1">
+        <h1 >LokiCorp Import Export</h1>
+        <p class="__paraph-w">
+            Une société de Sourcing experte en négociation de produits de 
+            l'Extrême-Orient.
+        </p>
+        <button 
+        class="__main-button"
+        mat-flat-button 
+        color="warn"
+        routerLink="contact"
+        >Nous Contacter</button>
+    </div>
+    <div class="block2"
+    fxHide.lt-md="true">
+        
+        <img src="../../assets/images/hero-illustration.svg">
+            
+    </div>
+
+</div>
+
+<div class="second-block">
+    <div class="second-block-1">
+    <h1 class="__red-me">Qui sommes-nous ?</h1>
+    <p>
+        LokiCorp Import Export est une société basée au Kekistan specialisée dans la vente 
+        et le Sourcing de produits de l'Extrême-Orient vers les pays francophones.
+        Fondée en 2020 nous exportons des produits dans plus de 27 pays sur les quatre continents.
+        De l’Afrique centrale au Canada en passant par la France et la Thaïlande. 
+        Nous avons su nous placer comme repère de confiance pour nos clients, 
+        dans le choix des produits et des réglementations d’importation.
+    </p>
+    </div>
+    <div class="second-block-2">
+        <div class="group-prez">
+            <mat-card class="__card-prez mat-elevation-z0">
+                <div class="__div-icon mat-elevation-z3">
+                    <mat-icon class="main-icon-prez">hourglass_empty</mat-icon>
+                </div>
+                <h3> Développement</h3>
+                <p>Nous identifions vos besoins et concevons avec vous un nouveau produit.</p>
+                <button 
+                mat-flat-button 
+                routerLink="contact"
+                color="warn">En savoir plus <mat-icon class="icon-centered">arrow_forward</mat-icon></button>
+            </mat-card>
+            <mat-card class="__card-prez mat-elevation-z0">
+                <div class="__div-icon mat-elevation-z3">
+                    <mat-icon class="main-icon-prez">business</mat-icon>
+                </div>
+                <h3> Sourcing</h3>
+                <p>Nous cherchons des fournisseurs compétents, qualifiés et compétitifs sur les marchés émergents d'Asie.</p>
+                <button 
+                mat-flat-button 
+                routerLink="contact"
+                color="warn">En savoir plus <mat-icon class="icon-centered">arrow_forward</mat-icon></button>
+            </mat-card>
+        </div>
+        <div class="group-prez">
+            <mat-card class="__card-prez mat-elevation-z0">
+                <div class="__div-icon mat-elevation-z3">
+                    <mat-icon class="main-icon-prez">category</mat-icon>
+                </div>
+                <h3>Échantillon et production</h3>
+                <p>Les fournisseurs sont managés par notre équipe locale et soutenus par nos ingénieurs.</p>
+                <button 
+                mat-flat-button 
+                routerLink="contact"
+                color="warn">En savoir plus <mat-icon class="icon-centered">arrow_forward</mat-icon></button>
+            </mat-card>
+            <mat-card class="__card-prez mat-elevation-z0">
+                <div class="__div-icon mat-elevation-z3">
+                    <mat-icon class="main-icon-prez">policy</mat-icon>
+                </div>
+                <h3> Contrôle qualité</h3>
+                <p>À chaque étape, nous nous assurons que votre produit est conforme à ce que vous avez commandé.</p>
+                <button 
+                mat-flat-button 
+                routerLink="contact"
+                color="warn">En savoir plus <mat-icon class="icon-centered">arrow_forward</mat-icon></button>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="third-block">
+    <div class="third-block-1">
+        <p>
+            Depuis le début de la pandémie COVID-19, nous proposons au plus 
+            grand nombre, des produits barrage au Coronavirus et ce dans un délai 
+            très court !
+            Nous sommes reconnus par de nombreux clients comme des partenaires 
+            de qualité même lorsque ces produits sont en pénurie totale dans les pays 
+            touchés.
+        </p>
+        <h1 class="__red-me">Nos produits grand public</h1>
+    </div>
+    <div class="third-block-2">
+        <mat-card 
+        class="card-product mat-elevation-z2"
+        *ngFor="let produit of produits">
+            <mat-card-content>
+                <a [routerLink]="['/produits',produit.id]">
+                <img src="{{produit.photo}}"></a>
+            </mat-card-content>
+            <mat-card-header>
+                <mat-card-title class="__card-titre">
+                    <a [routerLink]="['/produits',produit.id]">{{produit.titre}}</a>
+                </mat-card-title>
+                <mat-card-subtitle class="__card-prix">{{produit.prix.euro}}<sup>€{{produit.prix.centimes}}</sup></mat-card-subtitle>
+            </mat-card-header>
+            
+        </mat-card>
+    </div>
+    <!-- <fa-icon [icon]="faCog" [spin]="true" ></fa-icon> -->
+</div>
+
+
+
+        
+
