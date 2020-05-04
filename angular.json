@@ -147,8 +147,7 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "builder": "@zeit/ng-deploy:deploy"
         }
       }
     }
