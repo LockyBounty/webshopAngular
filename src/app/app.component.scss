@@ -1,5 +1,18 @@
 .main {
-    min-height: 70vh;
-    // flex : 1 0 auto;
+    // min-height: 70vh;
+    
     background-color: #f8f9fa;
 }
+/* On screens that are above 499 */
+@media (min-width:499px) {
+    .main {
+        height: 100%;
+        flex: 1;
+    }
+    .cont{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+}
+

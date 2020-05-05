@@ -16,7 +16,7 @@
                     
                 </div>
                 <div class="__produit-unique-block-2">
-                    <p class="__prix-affiche">{{produit.prix*produit.quantite |currency:'EUR':'symbol':'1.0':'fr'}}</p>
+                    <p class="__prix-affiche">{{produit.prix |currency:'EUR':'symbol':'1.0':'fr'}}</p>
                     <!-- |currency:'EUR':'symbol':'1.2-2':'fr' -> 1 entier 2 decimales -->
                     <button mat-icon-button color="warn"
                     (click)="onSupprimer(indexFR)"><mat-icon>delete</mat-icon></button>
@@ -36,9 +36,9 @@
             </div>
             <div class="__total-block">
                 
-                <p class="__prix-sous-total">{{calculTotal()|currency:'EUR':'symbol':'1.0':'fr'}}</p>
+                <p class="__prix-sous-total">{{calculTotal()| number : "1.0-0"}} €</p>
                 <p>Gratuite</p>
-                <p class="__prix-total">{{calculTotal()|currency:'EUR':'symbol':'1.0':'fr'}}</p>
+                <p class="__prix-total">{{calculTotal()| number : "1.0-0"}} €</p>
                 
             </div>
         </div>
@@ -52,7 +52,7 @@
     *ngIf="panier.length >0"
     >Passer commande</button>
     <div class="__panier-vide" *ngIf="panier.length===0">
-        <h3>Vous n'avez actuellement aucun article dans votre panier</h3>
+        <h3 style="text-align: center;">Vous n'avez actuellement aucun article dans votre panier</h3>
     </div>
     <!-- <button mat-flat-button
     color="accent"

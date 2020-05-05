@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import {Contact} from '../models/Contact.model';
 import {ContactService} from '../services/contact.service';
 import { Subscription } from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 
 // interface Titre { // à placer avant @Component, ici, pour faire une liste où on va boucler pour un select
@@ -27,13 +29,17 @@ export class ContactComponent implements OnInit {
   contactSubscription : Subscription;
 
   
+  
   titres :Titre[] = [
     {value: 'Service Commercial'},
     {value: 'Support Technique'},
     {value: 'Autre'}
   ];
 
-  constructor(private formBuilder : FormBuilder, private contactService: ContactService) { }
+  constructor(private formBuilder : FormBuilder, 
+    private contactService: ContactService,
+    private router : Router,
+    private _snackBar: MatSnackBar) { }
 
     emailFormControl = new FormControl('', [
       Validators.required,
@@ -80,9 +86,38 @@ export class ContactComponent implements OnInit {
     // console.log(this.tester);
     this.contactService.addContact(contactFormEnvoi);
     console.log(this.contactReview);
+    this.openSnackbar();
+  }
+
+  openSnackbar() {
+    this._snackBar.openFromComponent(SnackbarComponent, {
+      duration: 2 * 1000
+    });
+    setTimeout(()=>{ this.router.navigate(["/"])}, 1500);
+    
   }
 
   test(){
     console.log(this.emailFormControl);
   }
 }
+
+
+// -----------------------------------------------------
+// SNACKBAR POPUP
+// -----------------------------------------------------
+
+@Component({
+  selector: 'snackbar-component',
+  templateUrl: 'snackbar.component.html',
+  styles: [`
+    .__envoi-message {      
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }  
+    
+  `],
+})
+export class SnackbarComponent {}

@@ -35,13 +35,14 @@
         padding : 0 1em;
     }
     textarea{
+        box-sizing: border-box;//<-- pour qu'il ne depasse pas la box du parent
         font-family: Raleway-med;
         color:grey;
         font-size: 14px;
-        margin-right: 2em;
+        margin: 0 0vw 0 0vw;
         padding : 1.5em;
         position: relative;
-        width: 90%;
+        width: 100%;//<-- pour qu'il ne depasse pas la box du parent
         border-color: lightgray;
         border-radius: 2px;
     }
@@ -82,3 +83,7 @@
 
     }
 }
+
+.warning {
+    background-color: yellow;
+  }

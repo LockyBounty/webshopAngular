@@ -11,16 +11,16 @@ import { Subject } from 'rxjs';
 export class ContactService {
 
     private contactFormEnvoyes : Contact[] = [
-        {
-            titre : "",
-            prenom : "",
-            nom : "",
-            pays : "",
-            ville : "",
-            email : "",
-            sujet : "",
-            message : "",
-        },    
+        // {
+        //     titre : "",
+        //     prenom : "",
+        //     nom : "",
+        //     pays : "",
+        //     ville : "",
+        //     email : "",
+        //     sujet : "",
+        //     message : "",
+        // },    
     ];
 
     contactSubject = new Subject<Contact[]>();

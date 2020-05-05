@@ -13,7 +13,19 @@ class="mat-elevation-z4 __no-round">
     <a mat-button routerLink="">Accueil</a>
     <a mat-button routerLink="produits">Boutique</a>
     <a mat-button routerLink="contact">Contact</a>
-    <a mat-button routerLink="panier"><mat-icon>shopping_cart</mat-icon></a>
+    <a routerLink="panier" >
+        <button mat-button *ngIf="panier.length ===0" >
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-button *ngIf="panier.length >0" >    
+            <mat-icon
+            matBadgeColor="warn"
+            matBadge="{{panier.length}}" 
+            matBadgePosition="after">shopping_cart</mat-icon>
+        </button>
+    </a>
+    
+    <!-- <a mat-button routerLink="panier"><mat-icon>shopping_cart</mat-icon></a> -->
     <a mat-button routerLink="auth"><mat-icon>account_circle</mat-icon></a>
     </div>
     <div fxShow="true" fxHide.gt-xs="true"
@@ -38,11 +50,11 @@ class=" zero mat-elevation-z4">
     <div class="__fond-violet" #sidenav fxLayout="column">
         <div fxLayout="column">
 
-            <a mat-button routerLink="">Accueil</a>
-            <a mat-button routerLink="produits">Boutique</a>
-            <a mat-button routerLink="contact">Contact</a>
-            <a mat-button routerLink="panier">Panier</a>
-            <a mat-button routerLink="auth">Mon compte</a>
+            <a mat-button routerLink="" (click)="onToggleSidenav()">Accueil</a>
+            <a mat-button routerLink="produits" (click)="onToggleSidenav()">Boutique</a>
+            <a mat-button routerLink="contact" (click)="onToggleSidenav()">Contact</a>
+            <a mat-button routerLink="panier" (click)="onToggleSidenav()">Panier</a>
+            <a mat-button routerLink="auth" (click)="onToggleSidenav()">Mon compte</a>
 
         </div>
     </div>

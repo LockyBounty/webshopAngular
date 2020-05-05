@@ -75,10 +75,11 @@
             </div>
             <div class="__form-group">
                 <p style="color:#027368">Votre message</p>   
-                <textarea name="message"  cols="20" rows="10" formControlName="message"></textarea>
+                <textarea name="message"   rows="10" formControlName="message"></textarea>
                 
             </div>
             <button mat-flat-button 
+            type="button"
             disabled
             class="__bouton-denvoi"
             *ngIf="contactForm.invalid">Soumettre</button>
@@ -86,7 +87,15 @@
             color="warn" 
             type="submit" 
             class="__bouton-denvoi"
+            (click)="openSnackbar()"
             *ngIf="!contactForm.invalid">Soumettre</button>
+            
+            <!-- <button mat-flat-button 
+            type="button"
+            
+            class="__bouton-denvoi"
+            (click)="openSnackbar()"
+            >Soumettre</button> -->
         </form>
     </div>
     

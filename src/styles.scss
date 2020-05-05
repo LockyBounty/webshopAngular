@@ -13,12 +13,17 @@ html, body {
     display:flex;
     flex-direction: column;
     min-height: 100vh;
-    scroll-behavior: smooth;  }
+    
+    scroll-behavior: smooth;  
+    flex:1;
+}
 
 
 body { 
     margin: 0; 
     height:100%;
+    
+    
     // position: relative;
     // padding-bottom : 291px; //taille group-footer
     font-family: Roboto, "Helvetica Neue", sans-serif;

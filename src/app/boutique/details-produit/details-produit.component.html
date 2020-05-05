@@ -63,7 +63,7 @@
                                 <mat-card-title 
                                 class="__card-prix" 
                                 style="color: #D91828;">
-                                {{(produit.prix.total*quantity.value|currency:'EUR':'symbol':'1.0':'fr')}}</mat-card-title>
+                                {{(produit.prix.total*quantity.value| number : "1.0-0")}}<sup>€</sup></mat-card-title>
                             </div>
                         </div>
                         <mat-card-content>
