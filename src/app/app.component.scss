@@ -1,6 +1,6 @@
 .main {
     // min-height: 70vh;
-    
+    width: 100%;
     background-color: #f8f9fa;
 }
 /* On screens that are above 499 */
@@ -13,6 +13,7 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        width: 100%;
     }
 }
 
