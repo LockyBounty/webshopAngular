@@ -36,8 +36,8 @@
         border-radius: 2px;
         
     }
-    /* On screens that are 399px or less */
-    @media screen and (max-width: 399px) {
+    /* On screens that are 450px or less */
+    @media screen and (max-width: 450px) {
         h1{
             text-indent: 2vw;
             padding-bottom : 1vh;
@@ -66,8 +66,8 @@
             justify-self: center;
         }
     }
-    /* On screens that are 399px or more */
-    @media screen and (min-width: 400px) {
+    /* On screens that are 451px or more  Pixel2xl = 411px large*/
+    @media screen and (min-width: 451px) {
 
         .__centered {
             padding: 1em 1em 1em 1em;
